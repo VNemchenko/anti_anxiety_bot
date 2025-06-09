@@ -28,12 +28,12 @@ jobs:
 
       - name: Copy files to server
         run: |
-          scp -r . ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/var/www/anti-anxiety-bot/
+          scp -r . ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/var/www/anti_anxiety_bot/
 
       - name: Restart bot via SSH
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
-            cd /var/www/anti-anxiety-bot
+            cd /var/www/anti_anxiety_bot
             docker compose down
             docker compose build
             docker compose up -d
