@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  anxiety-bot:
+    build: .
+    container_name: anxiety_bot
+    restart: unless-stopped
+    environment:
+      - BOT_TOKEN=your_telegram_token_here
+    volumes:
+      - ./users_data.json:/app/users_data.json
