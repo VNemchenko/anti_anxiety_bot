@@ -150,7 +150,10 @@ def schedule_daily_tasks():
             replace_existing=True
         )
 
-if __name__ == '__main__':
+async def on_startup(dp):
     schedule_daily_tasks()
     scheduler.start()
-    executor.start_polling(dp, skip_updates=True)
+
+
+if __name__ == '__main__':
+    executor.start_polling(dp, skip_updates=True, on_startup=on_startup)
