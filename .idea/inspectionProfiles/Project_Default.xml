@@ -1,0 +1,262 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="241" name="Python" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="MsBuiltinInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="MsOrderByInspection" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="MysqlLoadDataPathInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="MysqlParsingInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="OraDeprecateTypeInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PgSelectFromProcedureInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyInterpreterInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="147">
+            <item index="0" class="java.lang.String" itemvalue="gensim" />
+            <item index="1" class="java.lang.String" itemvalue="bs4" />
+            <item index="2" class="java.lang.String" itemvalue="scikit-learn" />
+            <item index="3" class="java.lang.String" itemvalue="logger" />
+            <item index="4" class="java.lang.String" itemvalue="yargy" />
+            <item index="5" class="java.lang.String" itemvalue="dialogflow" />
+            <item index="6" class="java.lang.String" itemvalue="redis" />
+            <item index="7" class="java.lang.String" itemvalue="pyasn1-modules" />
+            <item index="8" class="java.lang.String" itemvalue="bz2file" />
+            <item index="9" class="java.lang.String" itemvalue="sentry-sdk" />
+            <item index="10" class="java.lang.String" itemvalue="django-tinymce" />
+            <item index="11" class="java.lang.String" itemvalue="docutils" />
+            <item index="12" class="java.lang.String" itemvalue="xlrd" />
+            <item index="13" class="java.lang.String" itemvalue="Werkzeug" />
+            <item index="14" class="java.lang.String" itemvalue="python-engineio" />
+            <item index="15" class="java.lang.String" itemvalue="Flask-WTF" />
+            <item index="16" class="java.lang.String" itemvalue="uWSGI" />
+            <item index="17" class="java.lang.String" itemvalue="click" />
+            <item index="18" class="java.lang.String" itemvalue="Flask-SQLAlchemy" />
+            <item index="19" class="java.lang.String" itemvalue="simplejson" />
+            <item index="20" class="java.lang.String" itemvalue="urllib2-file" />
+            <item index="21" class="java.lang.String" itemvalue="boto3" />
+            <item index="22" class="java.lang.String" itemvalue="Flask-SocketIO" />
+            <item index="23" class="java.lang.String" itemvalue="pika" />
+            <item index="24" class="java.lang.String" itemvalue="idna" />
+            <item index="25" class="java.lang.String" itemvalue="rsa" />
+            <item index="26" class="java.lang.String" itemvalue="decorator" />
+            <item index="27" class="java.lang.String" itemvalue="natasha" />
+            <item index="28" class="java.lang.String" itemvalue="apiai" />
+            <item index="29" class="java.lang.String" itemvalue="cx-Oracle" />
+            <item index="30" class="java.lang.String" itemvalue="DAWG-Python" />
+            <item index="31" class="java.lang.String" itemvalue="numpy" />
+            <item index="32" class="java.lang.String" itemvalue="pyasn1" />
+            <item index="33" class="java.lang.String" itemvalue="requests" />
+            <item index="34" class="java.lang.String" itemvalue="ldap3" />
+            <item index="35" class="java.lang.String" itemvalue="get" />
+            <item index="36" class="java.lang.String" itemvalue="smart-open" />
+            <item index="37" class="java.lang.String" itemvalue="vk-api" />
+            <item index="38" class="java.lang.String" itemvalue="prompt-toolkit" />
+            <item index="39" class="java.lang.String" itemvalue="itsdangerous" />
+            <item index="40" class="java.lang.String" itemvalue="scipy" />
+            <item index="41" class="java.lang.String" itemvalue="pymorphy2-dicts" />
+            <item index="42" class="java.lang.String" itemvalue="botocore" />
+            <item index="43" class="java.lang.String" itemvalue="sortedcontainers" />
+            <item index="44" class="java.lang.String" itemvalue="pandas" />
+            <item index="45" class="java.lang.String" itemvalue="Django" />
+            <item index="46" class="java.lang.String" itemvalue="cachetools" />
+            <item index="47" class="java.lang.String" itemvalue="pytz" />
+            <item index="48" class="java.lang.String" itemvalue="django-bootstrap3" />
+            <item index="49" class="java.lang.String" itemvalue="protobuf" />
+            <item index="50" class="java.lang.String" itemvalue="colorlog" />
+            <item index="51" class="java.lang.String" itemvalue="googleapis-common-protos" />
+            <item index="52" class="java.lang.String" itemvalue="nltk" />
+            <item index="53" class="java.lang.String" itemvalue="python-dateutil" />
+            <item index="54" class="java.lang.String" itemvalue="flask-ldap3-login" />
+            <item index="55" class="java.lang.String" itemvalue="MarkupSafe" />
+            <item index="56" class="java.lang.String" itemvalue="docopt" />
+            <item index="57" class="java.lang.String" itemvalue="post" />
+            <item index="58" class="java.lang.String" itemvalue="Flask-OAuthlib" />
+            <item index="59" class="java.lang.String" itemvalue="certifi" />
+            <item index="60" class="java.lang.String" itemvalue="oauthlib" />
+            <item index="61" class="java.lang.String" itemvalue="JayDeBeApi" />
+            <item index="62" class="java.lang.String" itemvalue="google-api-core" />
+            <item index="63" class="java.lang.String" itemvalue="intervaltree" />
+            <item index="64" class="java.lang.String" itemvalue="beautifulsoup4" />
+            <item index="65" class="java.lang.String" itemvalue="pyodbc" />
+            <item index="66" class="java.lang.String" itemvalue="boto" />
+            <item index="67" class="java.lang.String" itemvalue="django-pyodbc-azure" />
+            <item index="68" class="java.lang.String" itemvalue="query-string" />
+            <item index="69" class="java.lang.String" itemvalue="python-socketio" />
+            <item index="70" class="java.lang.String" itemvalue="requests-negotiate" />
+            <item index="71" class="java.lang.String" itemvalue="suds-jurko" />
+            <item index="72" class="java.lang.String" itemvalue="backports.functools-lru-cache" />
+            <item index="73" class="java.lang.String" itemvalue="enum34" />
+            <item index="74" class="java.lang.String" itemvalue="request" />
+            <item index="75" class="java.lang.String" itemvalue="SQLAlchemy" />
+            <item index="76" class="java.lang.String" itemvalue="www-authenticate" />
+            <item index="77" class="java.lang.String" itemvalue="minio" />
+            <item index="78" class="java.lang.String" itemvalue="wcwidth" />
+            <item index="79" class="java.lang.String" itemvalue="uwsgitop" />
+            <item index="80" class="java.lang.String" itemvalue="Jinja2" />
+            <item index="81" class="java.lang.String" itemvalue="requests-oauthlib" />
+            <item index="82" class="java.lang.String" itemvalue="public" />
+            <item index="83" class="java.lang.String" itemvalue="urllib3" />
+            <item index="84" class="java.lang.String" itemvalue="Flask" />
+            <item index="85" class="java.lang.String" itemvalue="six" />
+            <item index="86" class="java.lang.String" itemvalue="JPype1" />
+            <item index="87" class="java.lang.String" itemvalue="chardet" />
+            <item index="88" class="java.lang.String" itemvalue="jmespath" />
+            <item index="89" class="java.lang.String" itemvalue="WTForms" />
+            <item index="90" class="java.lang.String" itemvalue="pymorphy2" />
+            <item index="91" class="java.lang.String" itemvalue="s3transfer" />
+            <item index="92" class="java.lang.String" itemvalue="grpcio" />
+            <item index="93" class="java.lang.String" itemvalue="pysmb" />
+            <item index="94" class="java.lang.String" itemvalue="gssapi" />
+            <item index="95" class="java.lang.String" itemvalue="google-auth" />
+            <item index="96" class="java.lang.String" itemvalue="wincertstore" />
+            <item index="97" class="java.lang.String" itemvalue="openpyxl" />
+            <item index="98" class="java.lang.String" itemvalue="pytest" />
+            <item index="99" class="java.lang.String" itemvalue="jsonrpcclient" />
+            <item index="100" class="java.lang.String" itemvalue="hiredis" />
+            <item index="101" class="java.lang.String" itemvalue="redis-py-cluster" />
+            <item index="102" class="java.lang.String" itemvalue="environs" />
+            <item index="103" class="java.lang.String" itemvalue="psycopg2" />
+            <item index="104" class="java.lang.String" itemvalue="camunda-external-task-client-python3" />
+            <item index="105" class="java.lang.String" itemvalue="loguru" />
+            <item index="106" class="java.lang.String" itemvalue="json-rpc" />
+            <item index="107" class="java.lang.String" itemvalue="psycopg2-binary" />
+            <item index="108" class="java.lang.String" itemvalue="sentry_sdk" />
+            <item index="109" class="java.lang.String" itemvalue="frozendict" />
+            <item index="110" class="java.lang.String" itemvalue="gunicorn" />
+            <item index="111" class="java.lang.String" itemvalue="flask" />
+            <item index="112" class="java.lang.String" itemvalue="cx_Oracle" />
+            <item index="113" class="java.lang.String" itemvalue="scikit-image" />
+            <item index="114" class="java.lang.String" itemvalue="easydict" />
+            <item index="115" class="java.lang.String" itemvalue="PySimpleGUI" />
+            <item index="116" class="java.lang.String" itemvalue="opencv-python" />
+            <item index="117" class="java.lang.String" itemvalue="PyYAML" />
+            <item index="118" class="java.lang.String" itemvalue="tensorboardX" />
+            <item index="119" class="java.lang.String" itemvalue="torch" />
+            <item index="120" class="java.lang.String" itemvalue="torchvision" />
+            <item index="121" class="java.lang.String" itemvalue="einops" />
+            <item index="122" class="java.lang.String" itemvalue="dlib" />
+            <item index="123" class="java.lang.String" itemvalue="dominate" />
+            <item index="124" class="java.lang.String" itemvalue="export" />
+            <item index="125" class="java.lang.String" itemvalue="pytest-mock" />
+            <item index="126" class="java.lang.String" itemvalue="blinker" />
+            <item index="127" class="java.lang.String" itemvalue="aiopg" />
+            <item index="128" class="java.lang.String" itemvalue="aiohttp" />
+            <item index="129" class="java.lang.String" itemvalue="pytest-asyncio" />
+            <item index="130" class="java.lang.String" itemvalue="retry" />
+            <item index="131" class="java.lang.String" itemvalue="aio_pika" />
+            <item index="132" class="java.lang.String" itemvalue="pydantic" />
+            <item index="133" class="java.lang.String" itemvalue="openai" />
+            <item index="134" class="java.lang.String" itemvalue="python-dotenv" />
+            <item index="135" class="java.lang.String" itemvalue="apscheduler" />
+            <item index="136" class="java.lang.String" itemvalue="python-telegram-bot" />
+            <item index="137" class="java.lang.String" itemvalue="sqlalchemy" />
+            <item index="138" class="java.lang.String" itemvalue="dateparser" />
+            <item index="139" class="java.lang.String" itemvalue="google-cloud" />
+            <item index="140" class="java.lang.String" itemvalue="google-cloud-dialogflow" />
+            <item index="141" class="java.lang.String" itemvalue="werkzeug" />
+            <item index="142" class="java.lang.String" itemvalue="pytest-dependency" />
+            <item index="143" class="java.lang.String" itemvalue="SpeechRecognition" />
+            <item index="144" class="java.lang.String" itemvalue="pydub" />
+            <item index="145" class="java.lang.String" itemvalue="dependency-injector" />
+            <item index="146" class="java.lang.String" itemvalue="html2text" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="W605" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="pyodbc" />
+          <option value="cx_Oracle" />
+          <option value="simplejson" />
+          <option value="requests" />
+          <option value="redis" />
+          <option value="bp_module.dateutil" />
+          <option value="bp_module.bs4" />
+          <option value="bp_module.smb" />
+          <option value="bp_module.minio" />
+          <option value="sentry_sdk" />
+          <option value="bp_module.jsonrpcclient" />
+          <option value="parser" />
+          <option value="urllib.request" />
+          <option value="urllib.parse" />
+          <option value="task_client.processes.logger" />
+          <option value="task_client.prepares.logger" />
+          <option value="task_client.main.logger" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="ReassignedToPlainText" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
+      <option name="processCode" value="true" />
+      <option name="processLiterals" value="true" />
+      <option name="processComments" value="true" />
+    </inspection_tool>
+    <inspection_tool class="SqlAddNotNullColumnInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlAggregatesInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlAmbiguousColumnInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlAutoIncrementDuplicateInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlCaseVsCoalesceInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlCaseVsIfInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlCheckUsingColumnsInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlConstantConditionInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlCurrentSchemaInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlDerivedTableAliasInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlDialectInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlDropIndexedColumnInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlDtInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlDuplicateColumnInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlErrorHandlingInspection" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="SqlIdentifierInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlIdentifierLengthInspection" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="SqlIllegalCursorStateInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlInsertIntoGeneratedColumnInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlInsertNullIntoNotNullInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlInsertValuesInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlJoinWithoutOnInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlMisleadingReferenceInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlMissingReturnInspection" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="SqlMultipleLimitClausesInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlNoDataSourceInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlNullComparisonInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlRedundantAliasInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlRedundantCodeInCoalesceInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlRedundantElseNullInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlRedundantLimitInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlRedundantOrderingDirectionInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlResolveInspection" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="SqlShouldBeInGroupByInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlSideEffectsInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlSignatureInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlStorageInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlStringLengthExceededInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlTransactionStatementInTriggerInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlTriggerTransitionInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlTypeInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlUnicodeStringLiteralInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlUnreachableCodeInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlUnusedCteInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlUnusedSubqueryItemInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlUnusedVariableInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlWithoutWhereInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+  </profile>
+</component>
