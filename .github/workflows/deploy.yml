@@ -1,77 +1,36 @@
-name: Deploy based on Tag
+name: Deploy Anti-Anxiety Bot
 
 on:
   push:
     tags:
-      - 'v*-stage'   # Тег для stage окружения
-      - 'v*-prod'    # Тег для prod окружения
+      - 'v*'  # только теги вида v1.0, v2.3 и т.п.
 
 jobs:
   deploy:
-    name: Deploy based on Tag
     runs-on: ubuntu-latest
 
     steps:
-    # Шаг 1: Checkout репозиторий
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    # Шаг 2: Настройка SSH-агента для подключения к серверу
-    - name: Set up SSH agent
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
 
-    # Шаг 3: Определение окружения по тегу
-    - name: Set environment
-      id: set-env
-      run: |
-        if [[ "${GITHUB_REF}" == *-stage ]]; then
-          echo "::set-output name=ENV::stage"
-        elif [[ "${GITHUB_REF}" == *-prod ]]; then
-          echo "::set-output name=ENV::prod"
-        fi
+      - name: Create .env file with BOT_TOKEN
+        run: |
+          echo "BOT_TOKEN=${{ secrets.PROD_TELEGRAM_BOT_TOKEN }}" > .env
 
-    # Шаг 3.5: Удалиние и создание папки
-    - name: Remove and create project directory on server
-      run: |
-        ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-          rm -rf /var/www/anti_anxiety_bot &&
-          mkdir -p /var/www/anti_anxiety_bot
-        "
+      - name: Copy files to server
+        run: |
+          scp -r . ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/opt/anti-anxiety-bot/
 
-    # Шаг 4: Копирование файлов на сервер
-    - name: Copy files to server
-      run: |
-        scp -r -o StrictHostKeyChecking=no * ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/var/www/anti_anxiety_bot
-
-    # Шаг 5: Деплой на сервере с использованием переменных окружения из GitHub Secrets
-    - name: Deploy on server
-      run: |
-        ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
-          cd /var/www/anti_anxiety_bot
-          
-          # Определение имени контейнера в зависимости от окружения
-          if [ "${{ steps.set-env.outputs.ENV }}" == "stage" ]; then
-            CONTAINER_NAME=anti_anxiety_bot_stage
-            TELEGRAM_BOT_TOKEN=${{ secrets.STAGE_TELEGRAM_BOT_TOKEN }}
-            LOG_ENV=stage
-          else
-            CONTAINER_NAME=anti_anxiety_bot_prod
-            TELEGRAM_BOT_TOKEN=${{ secrets.PROD_TELEGRAM_BOT_TOKEN }}
-            LOG_ENV=prod
-          fi
-          
-          # Удаление старого контейнера для текущего окружения
-          docker rm -f $CONTAINER_NAME || true
-          
-          # Сборка нового контейнера
-          docker build -t $CONTAINER_NAME .
-
-          # Запуск нового контейнера с переменными
-          docker run -d --name $CONTAINER_NAME \
-            -e TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN \
-            -e HOST=${{ secrets.SERVER_IP }} \
-            -e LOG_ENV=$LOG_ENV \
-            $CONTAINER_NAME
-        EOF
+      - name: Restart bot via SSH
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
+            cd /opt/anti-anxiety-bot
+            docker compose down
+            docker compose build
+            docker compose up -d
+          EOF

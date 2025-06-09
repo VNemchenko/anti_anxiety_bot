@@ -5,7 +5,7 @@ services:
     build: .
     container_name: anxiety_bot
     restart: unless-stopped
-    environment:
-      - BOT_TOKEN=your_telegram_token_here
+    env_file:
+      - .env  # BOT_TOKEN хранится здесь
     volumes:
       - ./users_data.json:/app/users_data.json
