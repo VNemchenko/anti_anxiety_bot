@@ -6,6 +6,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 from random import choice
 from fpdf import FPDF
+import asyncio
 
 API_TOKEN = os.getenv("BOT_TOKEN")  # Установи переменную окружения
 
@@ -144,13 +145,13 @@ def schedule_daily_tasks():
         offset = user_data.get("timezone_offset", 0)
         hour = (8 - offset) % 24
         scheduler.add_job(
-            lambda uid=user_id: bot.send_message(uid, "⏰ Напоминание: напиши /today и начни день с маленького шага."),
+            lambda uid=user_id: asyncio.create_task(bot.send_message(uid, "⏰ Напоминание: напиши /today и начни день с маленького шага.")),
             CronTrigger(hour=hour, minute=0),
             id=f"reminder_{user_id}",
             replace_existing=True
         )
 
 if __name__ == '__main__':
-    schedule_daily_tasks()
+    loop = asyncio.get_event_loop()
     scheduler.start()
-    executor.start_polling(dp, skip_updates=True)
+    executor.start_polling(dp, skip_updates=True, loop=loop)
