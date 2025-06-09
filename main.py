@@ -1,9 +1,9 @@
 import json
 import os
-from datetime import datetime, time
+from datetime import datetime
 from aiogram import Bot, Dispatcher, executor, types
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from apscheduler.triggers.daily import DailyTrigger
+from apscheduler.triggers.cron import CronTrigger
 from random import choice
 from fpdf import FPDF
 
@@ -142,7 +142,7 @@ def schedule_daily_tasks():
         hour = (8 - offset) % 24
         scheduler.add_job(
             lambda uid=user_id: bot.send_message(uid, "⏰ Напоминание: напиши /today и начни день с маленького шага."),
-            DailyTrigger(hour=hour, minute=0),
+            CronTrigger(hour=hour, minute=0),
             id=f"reminder_{user_id}",
             replace_existing=True
         )
