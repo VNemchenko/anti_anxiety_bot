@@ -14,6 +14,8 @@ bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 scheduler = AsyncIOScheduler()
 
+pending_timezone = set()
+
 DATA_FILE = "users_data.json"
 if not os.path.exists(DATA_FILE):
     with open(DATA_FILE, "w") as f:
@@ -51,7 +53,10 @@ async def send_welcome(message: types.Message):
     if user_id not in data:
         data[user_id] = {"days": {}, "start_date": get_today(), "timezone_offset": 0}
         save_data(data)
-    await message.answer("👋 Добро пожаловать в 30-дневную анти-тревожную программу! Каждый день я буду давать тебе задания. Напиши /today чтобы начать.\n\nЕсли хочешь, чтобы напоминания приходили в определённое время — используй команду /set_timezone +N или -N (например, /set_timezone +3 для Москвы).")
+    await message.answer(
+        "👋 Добро пожаловать в 30-дневную анти-тревожную программу! Каждый день я буду давать тебе задания. Напиши /today чтобы начать.\n\n"
+        "Если хочешь получать напоминания по своему времени — напиши /set_timezone и следуй инструкции или укажи смещение сразу: /set_timezone +3."
+    )
 
 @dp.message_handler(commands=["set_timezone"])
 async def set_timezone(message: types.Message):
@@ -59,7 +64,10 @@ async def set_timezone(message: types.Message):
     data = load_data()
     parts = message.text.strip().split()
     if len(parts) != 2:
-        await message.answer("⚠️ Использование: /set_timezone +3 или /set_timezone -5")
+        pending_timezone.add(user_id)
+        await message.answer(
+            "Укажи смещение относительно UTC, например +3 или -5"
+        )
         return
     try:
         offset = int(parts[1])
@@ -69,6 +77,25 @@ async def set_timezone(message: types.Message):
     data.setdefault(user_id, {"days": {}, "start_date": get_today()})
     data[user_id]["timezone_offset"] = offset
     save_data(data)
+    schedule_daily_tasks()
+    pending_timezone.discard(user_id)
+    await message.answer(f"🕒 Часовой пояс установлен: UTC{offset:+d}")
+
+
+@dp.message_handler(lambda message: str(message.from_user.id) in pending_timezone)
+async def process_timezone_input(message: types.Message):
+    user_id = str(message.from_user.id)
+    data = load_data()
+    try:
+        offset = int(message.text.strip())
+    except ValueError:
+        await message.answer("⚠️ Нужно указать число, например +2 или -4")
+        return
+    data.setdefault(user_id, {"days": {}, "start_date": get_today()})
+    data[user_id]["timezone_offset"] = offset
+    save_data(data)
+    schedule_daily_tasks()
+    pending_timezone.discard(user_id)
     await message.answer(f"🕒 Часовой пояс установлен: UTC{offset:+d}")
 
 @dp.message_handler(commands=["today"])
