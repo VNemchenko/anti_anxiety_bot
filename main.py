@@ -6,7 +6,13 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 from random import choice
 from fpdf import FPDF
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import (
+    InlineKeyboardMarkup,
+    InlineKeyboardButton,
+    ReplyKeyboardMarkup,
+    KeyboardButton,
+    ReplyKeyboardRemove,
+)
 
 API_TOKEN = os.getenv("BOT_TOKEN")  # Установи переменную окружения
 
@@ -56,6 +62,24 @@ async def send_welcome(message: types.Message):
     await message.answer(
         "👋 Добро пожаловать в 30-дневную анти-тревожную программу! Каждый день я буду давать тебе задания. Напиши /today чтобы начать.\n\n"
         "Если хочешь получать напоминания по своему времени — напиши /set_timezone и следуй инструкции или укажи смещение сразу: /set_timezone +3."
+    )
+
+
+@dp.message_handler(commands=["menu"])
+async def show_menu(message: types.Message):
+    keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
+    keyboard.add(KeyboardButton("/today"))
+    keyboard.add(KeyboardButton("/stats"), KeyboardButton("/export"))
+    keyboard.add(KeyboardButton("/panic"))
+    keyboard.add(KeyboardButton("/set_timezone"))
+    await message.answer("Выберите команду:", reply_markup=keyboard)
+
+
+@dp.message_handler(commands=["hide_menu"])
+async def hide_menu(message: types.Message):
+    await message.answer(
+        "Меню скрыто. Чтобы открыть его снова, напишите /menu.",
+        reply_markup=ReplyKeyboardRemove(),
     )
 
 @dp.message_handler(commands=["set_timezone"])
